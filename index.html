@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Yokeswaran N – CV</title>
+    <style>
+        body {
+            background-color: #121212;
+            color: #fff;
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: auto;
+            background-color: #1c1c1c;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(255,0,0,0.3);
+        }
+
+        .profile-img {
+            display: block;
+            margin: 0 auto 20px;
+            width: 150px;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 3px solid #ff1a1a;
+            box-shadow: 0 0 10px rgba(255, 0, 0, 0.5);
+        }
+
+        h1 {
+            color: #ff1a1a;
+            text-align: center;
+            margin-bottom: 10px;
+        }
+
+        h2 {
+            color: #ff4d4d;
+            border-bottom: 1px solid #ff1a1a;
+            padding-bottom: 5px;
+            margin-top: 30px;
+        }
+
+        p, li {
+            color: #ccc;
+        }
+
+        ul {
+            padding-left: 20px;
+        }
+
+        .contact {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .contact a {
+            color: #ff1a1a;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+
+        .download-button {
+    display: block;
+    width: fit-content;
+    margin: 30px auto 0;
+    background-color: #ff1a1a;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    padding: 10px 25px;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 4px 6px rgba(255, 0, 0, 0.3);
+}
+
+.download-button:hover {
+    background-color: #e60000;
+    transform: scale(1.05);
+}
+
+    </style>
+</head>
+<body>
+    <div class="container" id="cv-content">
+        <!-- Profile Image -->
+        <img src="pro.jpg" alt="Profile Picture" class="profile-img" />
+
+        <!-- Name -->
+        <h1>YOKESHWARAN.N</h1>
+
+        <!-- About -->
+        <h2>About Me</h2>
+        <p>I am interested in Silambam and I am a national player. Discipline and perseverance define my journey.</p>
+
+        <!-- Education -->
+        <h2>Education</h2>
+        <p><strong>Bachelor of Computer Applications (BCA)</strong></p>
+        <p>Agurchand Manmull Jain College – Graduation Year: 2027</p>
+
+        <!-- Skills -->
+        <h2>Skills</h2>
+        <ul>
+            <li>HTML</li>
+            <li>Python</li>
+            <li>C++</li>
+            <li>Data Structures</li>
+        </ul>
+
+        <!-- Contact -->
+        <h2>Contact</h2>
+        <div class="contact">
+            <a href="mailto:yokiy0621@gmail.com">yokiy0621@gmail.com</a> |
+            <a href="tel:+919940594432">9940594432</a>
+        </div>
+
+        <!-- Download Button -->
+        <a href="resume.pdf" download class="download-button">📥 Download CV</a>
+
+    </div>
+
+    <!-- PDF Generator -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.3/html2pdf.bundle.min.js"></script>
+    <script>
+        function generatePDF() {
+            const element = document.getElementById('cv-content');
+            html2pdf()
+                .set({
+                    margin: 0.5,
+                    filename: 'Yokeswaran_CV.pdf',
+                    html2canvas: { scale: 2 },
+                    jsPDF: { unit: 'in', format: 'letter', orientation: 'portrait' }
+                })
+                .from(element)
+                .save();
+        }
+    </script>
+</body>
+</html>
